@@ -1,0 +1,26 @@
+# Python
+__pycache__/
+*.py[cod]
+*$py.class
+*.egg-info/
+.eggs/
+build/
+dist/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# engram-gate runtime outputs
+ledger.jsonl
+*.ledger.jsonl
+corpus.jsonl.tmp
+
+# OS / editor
+.DS_Store
+*.swp
+.idea/
+.vscode/
+
+# internal records (kept outside the public repo)
+FREEZE-DECISIONS.md

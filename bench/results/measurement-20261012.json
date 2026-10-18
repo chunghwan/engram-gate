@@ -1,0 +1,938 @@
+{
+  "corpus": "bench/corpus_fixed.jsonl",
+  "corpus_sha256": "6d3ac84c6c8fcaac287b8435e4e34c728f7ca9292b155fbd54b8aea980a4d93d",
+  "corpus_entries": 12,
+  "determinism": {
+    "summary": {
+      "queries": 10,
+      "repeats_each": 5,
+      "all_deterministic": true,
+      "latency_ms_p50": 0.022,
+      "latency_ms_p95": 0.032
+    },
+    "queries": [
+      {
+        "query": "database migration",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "a14076984d66f218",
+        "exit_code": 0,
+        "hit_count": 3,
+        "score_vector": [
+          10,
+          10,
+          8
+        ]
+      },
+      {
+        "query": "dashboard",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "fb69361e1c21cf8c",
+        "exit_code": 0,
+        "hit_count": 2,
+        "score_vector": [
+          5,
+          5
+        ]
+      },
+      {
+        "query": "auth token rotation",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "61f85bf4269bd1a2",
+        "exit_code": 0,
+        "hit_count": 2,
+        "score_vector": [
+          12,
+          8
+        ]
+      },
+      {
+        "query": "image compression",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "e65f1eba181dce41",
+        "exit_code": 0,
+        "hit_count": 1,
+        "score_vector": [
+          10
+        ]
+      },
+      {
+        "query": "backup retention",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "fcd1428685e1c560",
+        "exit_code": 0,
+        "hit_count": 2,
+        "score_vector": [
+          10,
+          2
+        ]
+      },
+      {
+        "query": "email digest",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "30d9170063fdbbc7",
+        "exit_code": 0,
+        "hit_count": 1,
+        "score_vector": [
+          10
+        ]
+      },
+      {
+        "query": "translation glossary",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "89240e45f1b90d9d",
+        "exit_code": 0,
+        "hit_count": 1,
+        "score_vector": [
+          7
+        ]
+      },
+      {
+        "query": "onboarding survey",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "1e07148ff3eccba8",
+        "exit_code": 0,
+        "hit_count": 1,
+        "score_vector": [
+          10
+        ]
+      },
+      {
+        "query": "quantum teleportation",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "4f53cda18c2baa0c",
+        "exit_code": 1,
+        "hit_count": 0,
+        "score_vector": []
+      },
+      {
+        "query": "database",
+        "repeats": 5,
+        "deterministic": true,
+        "output_sha256_16": "0277eac38c264253",
+        "exit_code": 0,
+        "hit_count": 3,
+        "score_vector": [
+          5,
+          5,
+          3
+        ]
+      }
+    ]
+  },
+  "undetected_conflict_pilot": {
+    "summary": {
+      "ordered_pairs_evaluated": 132,
+      "positive_pairs": 10,
+      "negative_pairs": 122,
+      "tp": 10,
+      "fp": 1,
+      "fn": 0,
+      "tn": 121,
+      "precision": 0.909,
+      "recall": 1.0
+    },
+    "pairs": [
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a1",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a2",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_a3",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b1",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_b2",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c1",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": true,
+        "detected": true
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_c2",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d1",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d2",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d3",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": true
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d4",
+        "other_task": "tr_d5",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_a1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_a2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_a3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_b1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_b2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_c1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_c2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_d1",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_d2",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_d3",
+        "ground_truth_conflict": false,
+        "detected": false
+      },
+      {
+        "query_task": "tr_d5",
+        "other_task": "tr_d4",
+        "ground_truth_conflict": false,
+        "detected": false
+      }
+    ]
+  }
+}
