@@ -89,6 +89,30 @@ class TestMcpLedger(unittest.TestCase):
             self.assertEqual(result["exit_code"], 0)
             self.assertFalse(os.path.exists(ledger))
 
+    def test_null_keywords_is_exit_2_not_string_none(self):
+        """keywords: null must not be coerced to the literal string "None"."""
+        with tempfile.TemporaryDirectory() as d:
+            store = write_corpus(d)
+            ledger = os.path.join(d, "ledger.jsonl")
+            result = mcp_server.gate_query(base_args(store, ledger, keywords=None))
+            self.assertEqual(result["exit_code"], 2)
+            self.assertEqual(result["error"], "empty keywords")
+            self.assertFalse(os.path.exists(ledger))
+
+    def test_ledger_records_original_keywords_text(self):
+        """SPEC §7: ledger `keywords` is the original query text, not the
+        normalized (lowercased) form used for scoring."""
+        with tempfile.TemporaryDirectory() as d:
+            store = write_corpus(d)
+            ledger = os.path.join(d, "ledger.jsonl")
+            result = mcp_server.gate_query(
+                base_args(store, ledger, keywords="  Database MIGRATION ")
+            )
+            self.assertEqual(result["exit_code"], 0)
+            rows = read_ledger(ledger)
+            self.assertEqual(len(rows), 1)
+            self.assertEqual(rows[0]["keywords"], "Database MIGRATION")
+
     def test_ledger_write_failure_is_exit_2_not_crash(self):
         with tempfile.TemporaryDirectory() as d:
             store = write_corpus(d)

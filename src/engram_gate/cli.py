@@ -71,7 +71,7 @@ def run_query(args) -> int:
             ledger_mod.append_ledger(
                 args.ledger,
                 agent=args.agent,
-                keywords=" ".join(keywords),
+                keywords=keywords_text,
                 exit_code=exit_code,
                 hits=hits,
                 total_hit_count=len(all_hits),

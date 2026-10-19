@@ -1,4 +1,4 @@
-"""Conformance tests for engram-gate (SPEC.md Sections 2-7).
+"""Conformance tests for engram-gate (SPEC.md Sections 2-8).
 
 Runnable with pytest or with plain unittest:
     python3 -m pytest tests/conformance -q

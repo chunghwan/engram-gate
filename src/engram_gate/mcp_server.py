@@ -67,7 +67,10 @@ def gate_query(arguments: dict) -> dict:
 def _gate_query(arguments: dict) -> dict:
     if not isinstance(arguments, dict):
         return {"exit_code": 2, "error": "invalid arguments", "hits": []}
-    keywords_text = str(arguments.get("keywords", "")).strip()
+    raw_keywords = arguments.get("keywords", "")
+    # null keywords (explicit None) must not become the literal string "None":
+    # treat as empty input so the exit-2 path is taken (§3).
+    keywords_text = ("" if raw_keywords is None else str(raw_keywords)).strip()
     keywords = parse_keywords(keywords_text)
     if not keywords:
         return {"exit_code": 2, "error": "empty keywords", "hits": []}
@@ -100,7 +103,7 @@ def _gate_query(arguments: dict) -> dict:
             ledger_mod.append_ledger(
                 str(arguments.get("ledger", "ledger.jsonl")),
                 agent=agent,
-                keywords=" ".join(keywords),
+                keywords=keywords_text,
                 exit_code=exit_code,
                 hits=hits,
                 total_hit_count=len(all_hits),
